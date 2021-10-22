@@ -1,5 +1,5 @@
 export interface AppConfigData {
-    port: string;
+    port: number;
     paths: {
         client: string;
         sessions: string;

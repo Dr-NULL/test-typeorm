@@ -3,6 +3,7 @@ import { BleedModule } from '@bleed-believer/core';
 
 import { ServerCommand } from './server';
 import { SeedsCommand } from './seeds';
+import { SetupCommand } from "./setup";
 
 @BleedModule({
     imports: [
@@ -10,6 +11,7 @@ import { SeedsCommand } from './seeds';
             commands: [
                 ServerCommand,
                 SeedsCommand,
+                SetupCommand,
             ],
             before: () => {
                 console.clear();

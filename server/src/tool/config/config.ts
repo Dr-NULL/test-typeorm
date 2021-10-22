@@ -2,6 +2,8 @@ import * as fsPromises from 'fs/promises';
 import { resolve } from 'path';
 
 export abstract class Config<T> {
+protected abstract default:T;
+
     private _path: string;
     get path(): string {
         return this._path;
