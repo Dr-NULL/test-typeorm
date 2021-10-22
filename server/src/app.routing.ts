@@ -9,7 +9,7 @@ import { SeedsCommand } from './seeds';
         CommandRouter.addToRouter({
             commands: [
                 ServerCommand,
-                SeedsCommand
+                SeedsCommand,
             ],
             before: () => {
                 console.clear();
