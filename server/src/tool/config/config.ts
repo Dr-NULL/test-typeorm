@@ -2,8 +2,6 @@ import * as fsPromises from 'fs/promises';
 import { resolve } from 'path';
 
 export abstract class Config<T> {
-protected abstract default:T;
-
     private _path: string;
     get path(): string {
         return this._path;
@@ -20,7 +18,7 @@ protected abstract default:T;
     }
 
     async save(data: T): Promise<void> {
-        const text = JSON.stringify(data);
+        const text = JSON.stringify(data, null, '    ');
         const byte = Buffer.from(text, 'utf-8');
         return fsPromises.writeFile(this._path, byte);
     }

@@ -7,7 +7,7 @@ export interface OrmConfigData {
     database: string,
     syncronize: boolean,
     logging: boolean,
-    timezone: string,
+    timezone?: string,
     entities: string[],
     migrations: string[],
     cli?: {
