@@ -1,6 +1,7 @@
 import { Command, CommandMethod } from '@bleed-believer/command';
-import { AppConfig, OrmConfig } from '@tool/config';
+
 import { appConfigValue, ormConfigValue } from './config-value';
+import { AppConfig, OrmConfig } from '@tool/config';
 
 @Command({
     title: 'Setup Server',
@@ -15,20 +16,21 @@ export class SetupCommand {
             const appConfig = new AppConfig();
             const appExists = await appConfig.exists();
             if (!appExists) {
-                process.stdout.write('-> Creando "appconfig.json"...');
+                process.stdout.write('-> Creando appconfig.json...');
+                await appConfig.save(appConfigValue);
                 console.log(' OK!');
             } else {
-                console.log('-> "appconfig.json" encontrado.');
+                console.log('-> appconfig.json encontrado.');
             }
             
             const ormConfig = new OrmConfig();
             const ormExists = await ormConfig.exists();
             if (!ormExists) {
-                process.stdout.write('-> Creando "ormconfig.json"...');
+                process.stdout.write('-> Creando ormconfig.json...');
                 await ormConfig.save(ormConfigValue);
                 console.log(' OK!');
             } else {
-                console.log('-> "ormconfig.json" encontrado.');
+                console.log('-> ormconfig.json encontrado.');
             }
     
             console.log('\nConfiguración completada!');
