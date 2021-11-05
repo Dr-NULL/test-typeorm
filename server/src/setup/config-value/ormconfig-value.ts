@@ -13,7 +13,7 @@ export const ormConfigValue: OrmConfigData = {
         './src/entities/*.entity.ts',
     ],
     migrations: [
-        './src/migrations/**.ts',
+        './src/migrations/*.ts',
     ],
     cli: {
         entitiesDir: './src/entities',
