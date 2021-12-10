@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cls && mocha --require ts-node/register --require ts-path-mapping/register ./src/**/*.test.ts"
+    "test": "mocha --require ts-node/register --require ts-path-mapping/register ./src/**/*.test.ts"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,7 @@
   "dependencies": {
     "@bleed-believer/command": "^0.0.3",
     "@bleed-believer/core": "^0.0.3",
+    "argon2": "^0.28.3",
     "express": "^4.17.1",
     "mssql": "^7.2.1",
     "suspicious-session": "^0.1.2",
